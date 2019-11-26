@@ -1,0 +1,48 @@
+<idea-plugin>
+  <id>com.demo.mypluginDemo.unique.plugin.id</id>
+  <name>MyPluginDemo</name>
+  <version>1.0</version>
+  <vendor email="ronghui.liang@edgecom.tech" url="http://www.edgecom.tech">edgecom</vendor>
+
+  <description><![CDATA[
+      MyPluginDemo description.<br>
+      <em>this is my first plugin</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      update new functions.<br>
+      <em>update my plugin demo </em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <group id="MyPluginDemo.SampleMenu" text="Sample Menu" description="Sample menu">
+      <add-to-group group-id="MainMenu" anchor="last"  />
+      <action id="MyPluginDemo.TextBoxes" class="com.demo.action.TextBoxes" text="Text Boxes"
+              description="A test menu item">
+        <add-to-group group-id="MainMenu" anchor="after" relative-to-action="ToolsMenu"/>
+        <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt K"/>
+      </action>
+    </group>
+
+    <action id="MyPluginDemo.MyDialog" class="com.demo.action.MyDialog" text="My Dialog" description="A my dialog item">
+      <add-to-group group-id="EditMenu" anchor="after" relative-to-action="$Redo"/>
+    </action>
+
+  </actions>
+
+</idea-plugin>
